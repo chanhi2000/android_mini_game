@@ -18,8 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CatchMoles.CatchMolesActivity" />
-        <activity android:name=".MatchCards.MatchCards"></activity>
+        <activity android:name=".CatchMoles.CatchMolesActivity"/>
+        <activity android:name=".MatchCards.MatchCardsActivity"/>
     </application>
 
 </manifest>

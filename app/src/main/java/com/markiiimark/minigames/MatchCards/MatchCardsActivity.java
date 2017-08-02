@@ -3,7 +3,6 @@ package com.markiiimark.minigames.MatchCards;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.markiiimark.minigames.R;
 
 public class MatchCardsActivity extends AppCompatActivity
 {

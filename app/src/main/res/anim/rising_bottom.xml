@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<set xmlns:android="http://schemas.android.com/apk/res/android">
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillAfter="true">
     <translate
         android:duration="1000"
-        android:fromYDelta="@fraction/rise_y_start" android:toYDelta="@fraction/rise_y_end" />
+        android:fromYDelta="@fraction/rise_y_start2" android:toYDelta="@fraction/rise_y_end2" />
 
     <!--<translate-->
         <!--android:startOffset="1500"-->

@@ -17,33 +17,24 @@ import com.markiiimark.minigames.MatchCards.MatchCardsActivity;
 
 public class MainActivity extends AppCompatActivity
 {
-    ImageView mCloud1, mCloud2, mCloud3, mWalkingPig1, mRisingPig1;
-    Animation mCloudAnimation1, mCloudAnimation2, mCloudAnimation3, mOpening, mWalking, mRisingRightBottom, mRisingLeftBottom, mRisingBottom;
+    private ImageView mCloud1, mCloud2, mCloud3, mWalkingPig1, mRisingPig1;
+    private Animation mCloudAnimation1, mCloudAnimation2, mCloudAnimation3, mOpening, mWalking, mRisingRightBottom, mRisingLeftBottom, mRisingBottom;
 
-    FrameLayout mBackground;
-    MediaPlayer mBackgroundMusic, mWalkSound, mRiseSound;
+    private FrameLayout mBackground;
+    private MediaPlayer mBackgroundMusic, mWalkSound, mRiseSound;
 
-    Button mButtonCatchMoles, mButtonMatchCards;
+    private Button mButtonCatchMoles, mButtonMatchCards;
 
     @Override protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mBackground = (FrameLayout)findViewById(R.id.background);
-        mCloud1 = (ImageView)findViewById(R.id.img_cloud);
-        mCloud2 = (ImageView)findViewById(R.id.img_cloud2);
-        mCloud3 = (ImageView)findViewById(R.id.img_cloud3);
-        mWalkingPig1 = (ImageView)findViewById(R.id.img_pig1);
-        mRisingPig1 = (ImageView)findViewById(R.id.img_pig2);
-        mButtonCatchMoles = (Button)findViewById(R.id.btn_start_mole);
-        mButtonMatchCards = (Button)findViewById(R.id.btn_start_match);
-
-        mBackgroundMusic = MediaPlayer.create(getApplicationContext(), R.raw.bg);
+        setupViews();
+        setupAnimations();
+        setupMediaPlayers();
 
         mOpening = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.opening) ;
-        mButtonMatchCards.setVisibility(View.INVISIBLE);
-        mButtonMatchCards.setVisibility(View.INVISIBLE);
         mOpening.setAnimationListener(new Animation.AnimationListener()
         {
             @Override public void onAnimationStart(Animation animation)
@@ -65,17 +56,6 @@ public class MainActivity extends AppCompatActivity
 
             }
         });
-
-        mCloudAnimation1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.cloud);
-        mCloudAnimation2 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.cloud2);
-        mCloudAnimation3 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.cloud3);
-        mWalking = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.walking);
-        mRisingRightBottom = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rising_left_bottom);
-        mRisingLeftBottom = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rising_right_bottom);
-        mRisingBottom = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rising_bottom);
-
-        mWalkSound = MediaPlayer.create(getApplicationContext(), R.raw.walk);
-        mRiseSound = MediaPlayer.create(getApplicationContext(), R.raw.sideup);
 
         mBackground.startAnimation(mOpening);
         mCloud1.startAnimation(mCloudAnimation1);
@@ -123,7 +103,7 @@ public class MainActivity extends AppCompatActivity
                 mRisingPig1.setVisibility(View.VISIBLE);
                 mRisingPig1.startAnimation(mRisingBottom);
                 mRisingPig1.setRotation(0);
-                mRisingPig1.setVisibility(View.INVISIBLE);
+//                mRisingPig1.setVisibility(View.INVISIBLE);
                 mRiseSound.start();
             }
 
@@ -141,6 +121,37 @@ public class MainActivity extends AppCompatActivity
 
             @Override public void onAnimationRepeat(Animation animation) {}
         });
+    }
+
+    private void setupViews()
+    {
+        mBackground = (FrameLayout)findViewById(R.id.background);
+        mCloud1 = (ImageView)findViewById(R.id.img_cloud);
+        mCloud2 = (ImageView)findViewById(R.id.img_cloud2);
+        mCloud3 = (ImageView)findViewById(R.id.img_cloud3);
+        mWalkingPig1 = (ImageView)findViewById(R.id.img_pig1);
+        mRisingPig1 = (ImageView)findViewById(R.id.img_pig2);
+        mButtonCatchMoles = (Button)findViewById(R.id.btn_start_mole);
+        mButtonMatchCards = (Button)findViewById(R.id.btn_start_match);
+
+        mButtonMatchCards.setVisibility(View.INVISIBLE);
+        mButtonMatchCards.setVisibility(View.INVISIBLE);
+    }
+    private void setupAnimations()
+    {
+        mCloudAnimation1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.cloud);
+        mCloudAnimation2 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.cloud2);
+        mCloudAnimation3 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.cloud3);
+        mWalking = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.walking);
+        mRisingRightBottom = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rising_left_bottom);
+        mRisingLeftBottom = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rising_right_bottom);
+        mRisingBottom = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rising_bottom);
+    }
+    private void setupMediaPlayers()
+    {
+        mBackgroundMusic = MediaPlayer.create(getApplicationContext(), R.raw.bg);
+        mWalkSound = MediaPlayer.create(getApplicationContext(), R.raw.walk);
+        mRiseSound = MediaPlayer.create(getApplicationContext(), R.raw.sideup);
     }
 
     public void walkPig(View v)
