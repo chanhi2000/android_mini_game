@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <translate
+        android:duration="1000"
+        android:fromYDelta="@fraction/rise_y_start" android:toYDelta="@fraction/rise_y_end" />
+
+    <!--<translate-->
+        <!--android:startOffset="1500"-->
+        <!--android:duration="1000"-->
+        <!--android:fromYDelta="@fraction/rise_y_end" android:toYDelta="@fraction/rise_y_start" />-->
+</set>

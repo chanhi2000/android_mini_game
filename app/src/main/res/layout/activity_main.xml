@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.markiiimark.minigames.MainActivity"
+    android:background="@drawable/background"
+    android:id="@+id/background">
+
+    <ImageView android:id="@+id/img_cloud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/c4"/>
+
+    <ImageView android:id="@+id/img_cloud2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/c5"/>
+
+    <ImageView android:id="@+id/img_cloud3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/cl1"/>
+
+    <ImageView android:id="@+id/img_pig1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:visibility="invisible"
+        android:src="@drawable/pig5"
+        android:onClick="walkPig"/>
+
+    <ImageView android:id="@+id/img_pig2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="125dp"
+        android:visibility="invisible"
+        android:src="@drawable/pig2" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="24dp"
+        android:weightSum="2">
+        <Button android:id="@+id/btn_start_mole"
+            android:layout_width="wrap_content"
+            android:layout_height="90dp"
+            android:tag="CatchMoles"
+            android:layout_weight="1"
+            android:layout_marginRight="15dp"
+            android:visibility="invisible"
+            android:padding="30dp"
+            android:text="CatchMoles"
+            android:onClick="startGame"/>
+        <Button android:id="@+id/btn_start_match"
+            android:layout_width="wrap_content"
+            android:layout_height="90dp"
+            android:tag="MatchCards"
+            android:layout_weight="1"
+            android:layout_marginLeft="15dp"
+            android:padding="30dp"
+            android:text="MatchCards"
+            android:visibility="invisible"
+            android:onClick="startGame"/>
+    </LinearLayout>
+</FrameLayout>

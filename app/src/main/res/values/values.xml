@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="rise_y_start" type="fraction">53%p</item>"
+    <item name="rise_y_end" type="fraction">14%p</item>
+    <item name="rise_x_start" type="fraction">53%p</item>
+    <item name="rise_x_end" type="fraction">14%</item>
+    <item name="rise_x_start_reverse" type="fraction">-53%p</item>
+    <item name="rise_x_end_reverse" type="fraction">-14%p</item>
+</resources>
