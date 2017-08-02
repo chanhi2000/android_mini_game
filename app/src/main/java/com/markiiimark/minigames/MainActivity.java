@@ -175,5 +175,6 @@ public class MainActivity extends AppCompatActivity
                 break;
             default:break;
         }
+        mBackgroundMusic.stop();
     }
 }
